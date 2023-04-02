@@ -1,5 +1,8 @@
 package org.example;
 
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 import java.util.function.*;
 
 public class Main {
@@ -24,5 +27,14 @@ public class Main {
         //podpunkt 5
         BinaryOperator<Integer> dodawanie = Integer::sum;
         System.out.println(dodawanie.apply(9, 65));
+
+        //Utwórz instancję klasy Human przy pomocy mechanizmu odwoływania się do konstruktora (przy pomocy ::).
+        BiFunction<Integer, String, Human> aNew = Human::new;
+        System.out.println(aNew.apply(70, "Jan"));
+
+
+        List<String> names = Arrays.asList("Ania", "Hania", "Klaudia", "Basia");
+        names.sort(String::compareTo);
+        System.out.println(names);
     }
 }
